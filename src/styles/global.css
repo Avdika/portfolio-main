@@ -1,0 +1,41 @@
+:root {
+  --primary-color: #1b3a79;
+  /* Default to blue theme */
+}
+
+[data-theme='blue'] {
+  --primary-color: #1b3a79;
+}
+
+[data-theme='green'] {
+  --primary-color: #3a791b;
+}
+
+[data-theme='dark'] {
+  --primary-color: #000;
+  --background-color: #333;
+  --text-color: #fff;
+}
+
+[data-theme='colorblind'] {
+  --primary-color: #000;
+  --background-color: #fff;
+  --text-color: #000;
+  /* to do: check high contrast and distinct patterns */
+}
+
+body {
+  background-color: var(--background-color, #fff);
+  color: var(--text-color, #000);
+}
+
+nav {
+  background-color: var(--primary-color);
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
