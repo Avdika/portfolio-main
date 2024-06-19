@@ -1,27 +1,39 @@
 {
-  "name": "frontend",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/dom": "^10.1.0",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.24",
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.2",
-    "react-scripts": "5.0.1",
-    "typescript": "^5.3.3",
-    "web-vitals": "^2.1.4"
+    "@types/node": "^20.14.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "ajv": "^8.6.3",
+    "ajv-keywords": "^4.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^5.0.1",
+    "typescript": "^5.4.5",
+    "web-vitals": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "resolutions": {
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.38",
+    "css-select": "^5.1.0",
+    "svgo": "^3.3.2",
+    "resolve-url-loader": "^5.0.0",
+    "ajv": "^8.16.0",
+    "ajv-keywords": "^5.1.0"
   },
   "eslintConfig": {
     "extends": [

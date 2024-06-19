@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { Project } from "../types";
 
-const ProjectForm: React.FC<{ onSave: any; project: any }> = ({
-  onSave,
-  project,
-}) => {
+interface ProjectFormProps {
+  onSave: (project: Project) => void;
+  project: Project | null;
+}
+
+const ProjectForm: React.FC<ProjectFormProps> = ({ onSave, project }) => {
   const [formState, setFormState] = useState({
     title: "",
     description: "",
@@ -26,15 +29,15 @@ const ProjectForm: React.FC<{ onSave: any; project: any }> = ({
     }
   }, [project]);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormState({ ...formState, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const updatedProject = {
-      ...project,
+    const updatedProject: Project = {
+      id: project ? project.id : 0, // Ensure id is always defined
       title: formState.title,
       description: formState.description,
       tags: formState.tags.split(",").map((tag) => tag.trim()),
