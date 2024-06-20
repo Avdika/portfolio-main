@@ -1,12 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {
+  NavbarContainer,
+  NavTitle,
+  NavLink,
+  NavLinks,
+} from "../styles/NavbarStyles";
+import ThemeSwitcher from "./ThemeSwitcher";
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/projects">Projects</Link>
-    </nav>
+    <NavbarContainer>
+      <NavTitle>My Portfolio</NavTitle>
+      <NavLinks>
+        <NavLink href="#home">Home</NavLink>
+        <NavLink href="#projects">Projects</NavLink>
+        <NavLink href="#about">About</NavLink>
+        <NavLink href="#contact">Contact</NavLink>
+        <ThemeSwitcher />
+      </NavLinks>
+    </NavbarContainer>
   );
 };
 
