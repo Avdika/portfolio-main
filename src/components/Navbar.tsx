@@ -1,23 +1,24 @@
 import React from "react";
+import { useTheme } from "../contexts/ThemeContext";
 import {
   NavbarContainer,
-  NavTitle,
+  LinksContainer,
   NavLink,
-  NavLinks,
 } from "../styles/NavbarStyles";
 import ThemeSwitcher from "./ThemeSwitcher";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+  const { theme } = useTheme();
+
   return (
-    <NavbarContainer>
-      <NavTitle>My Portfolio</NavTitle>
-      <NavLinks>
-        <NavLink href="#home">Home</NavLink>
-        <NavLink href="#projects">Projects</NavLink>
-        <NavLink href="#about">About</NavLink>
-        <NavLink href="#contact">Contact</NavLink>
-        <ThemeSwitcher />
-      </NavLinks>
+    <NavbarContainer theme={theme}>
+      <div>My Portfolio</div>
+      <LinksContainer>
+        <NavLink href="/">Home</NavLink>
+        <NavLink href="/projects">Projects</NavLink>
+        <NavLink href="/admin">Admin</NavLink>
+      </LinksContainer>
+      <ThemeSwitcher />
     </NavbarContainer>
   );
 };
