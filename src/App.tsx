@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminPanel from "./pages/AdminPanel";
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
+import JSProjects from "./pages/JSProjects";
+// import CSProjects from "./pages/CSProjects"; // For later use. to do: Uncomment when ready
 import Navbar from "./components/Navbar";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
@@ -18,7 +19,8 @@ const AppContent: React.FC = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/js-projects" element={<JSProjects />} />
+          {/* <Route path="/cs-projects" element={<CSProjects />} /> For later use. to do: Uncomment when ready */}
           <Route path="/admin" element={<AdminPanel />} />
         </Routes>
       </Router>

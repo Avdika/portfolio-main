@@ -15,7 +15,8 @@ const Navbar: React.FC = () => {
       <div>My Portfolio</div>
       <LinksContainer>
         <NavLink href="/">Home</NavLink>
-        <NavLink href="/projects">Projects</NavLink>
+        <NavLink href="/js-projects">JS Projects</NavLink>
+        {/* <NavLink href="/cs-projects">C# Projects</NavLink> For later use. to do: Uncomment when ready */}
         <NavLink href="/admin">Admin</NavLink>
       </LinksContainer>
       <ThemeSwitcher />

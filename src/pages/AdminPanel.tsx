@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Project } from "../types";
-import projectsData from "../data/projects.json";
+import projectsData from "../data/projectsJS.json";
 import ProjectForm from "../components/ProjectForm";
 // import fs from "fs"; // Node.js file system module
 
