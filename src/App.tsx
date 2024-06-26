@@ -4,20 +4,33 @@ import AdminPanel from "./pages/AdminPanel";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Navbar from "./components/Navbar";
-import ThemeSwitcher from "./components/ThemeSwitcher";
-import "./styles/global.css";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
+import GlobalStyle from "./styles/GlobalStyles";
+
+const AppContent: React.FC = () => {
+  const { theme } = useTheme();
+
+  return (
+    <StyledThemeProvider theme={theme}>
+      <GlobalStyle theme={theme} />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/admin" element={<AdminPanel />} />
+        </Routes>
+      </Router>
+    </StyledThemeProvider>
+  );
+};
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Navbar />
-      <ThemeSwitcher />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/admin" element={<AdminPanel />} />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 };
 

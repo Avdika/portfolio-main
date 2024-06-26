@@ -1,17 +1,36 @@
 import React from "react";
+import {
+  ThemeSwitcherContainer,
+  ThemeButton,
+} from "../styles/ThemeSwitcherStyles";
+import { themes } from "../themes";
+import { useTheme } from "../contexts/ThemeContext";
 
 const ThemeSwitcher: React.FC = () => {
-  const setTheme = (theme: string) => {
-    document.documentElement.setAttribute("data-theme", theme);
-  };
+  const { setTheme } = useTheme();
 
   return (
-    <div>
-      <button onClick={() => setTheme("blue")}>Blue Theme</button>
-      <button onClick={() => setTheme("green")}>Green Theme</button>
-      <button onClick={() => setTheme("dark")}>Dark Theme</button>
-      <button onClick={() => setTheme("colorblind")}>Color-Blind Theme</button>
-    </div>
+    <ThemeSwitcherContainer>
+      <span style={{ color: "white", marginRight: "0.5rem" }}>Theme:</span>
+      <ThemeButton
+        color={themes.blue.background}
+        onClick={() => setTheme(themes.blue)}
+      />
+      <ThemeButton
+        color={themes.green.background}
+        onClick={() => setTheme(themes.green)}
+      />
+      <ThemeButton
+        color={themes.dark.background}
+        onClick={() => setTheme(themes.dark)}
+      />
+      <ThemeButton
+        color={themes.colorBlind.background}
+        onClick={() => setTheme(themes.colorBlind)}
+      >
+        <i className="icon-eye" /> {/* Placeholder for color-blind icon */}
+      </ThemeButton>
+    </ThemeSwitcherContainer>
   );
 };
 
