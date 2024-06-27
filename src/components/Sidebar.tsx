@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import projectsData from "../data/projects.json";
 import {
   SidebarContainer,
   ToggleButton,
@@ -8,7 +7,16 @@ import {
   SearchInput,
 } from "../styles/SidebarStyles";
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  projectsData: {
+    id: number;
+    title: string;
+    tags: string[];
+    description: string;
+  }[];
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ projectsData }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 

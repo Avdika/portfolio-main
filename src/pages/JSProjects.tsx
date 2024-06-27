@@ -1,17 +1,18 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
+import projectsData from "../data/projectsJS.json";
 import { ProjectsContainer, Content } from "../styles/ProjectsStyles";
 
-const Projects: React.FC = () => {
+const JSProjects: React.FC = () => {
   return (
     <ProjectsContainer>
-      <Sidebar />
+      <Sidebar projectsData={projectsData} />
       <Content>
-        <h1>Projects</h1>
+        <h1>JavaScript Projects</h1>
         {/* Add project display content here */}
       </Content>
     </ProjectsContainer>
   );
 };
 
-export default Projects;
+export default JSProjects;
