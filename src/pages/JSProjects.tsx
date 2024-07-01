@@ -3,21 +3,10 @@ import projectsData from "../data/projectsJS.json";
 import ProjectDetail from "../components/ProjectDetail";
 import Sidebar from "../components/Sidebar";
 import { ProjectsContainer, Content } from "../styles/ProjectsStyles";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  tags: string[];
-  imageFolder?: string; // Make imageFolder optional
-  links: { name: string; url: string }[];
-}
+import { Project } from "../types/project";
 
 const JSProjects: React.FC = () => {
-  const [selectedProject, setSelectedProject] = useState<Project>(
-    projectsData[0]
-  );
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <ProjectsContainer>
@@ -26,7 +15,16 @@ const JSProjects: React.FC = () => {
         onSelectProject={setSelectedProject}
       />
       <Content>
-        {selectedProject && <ProjectDetail project={selectedProject} />}
+        {selectedProject ? (
+          <ProjectDetail project={selectedProject} />
+        ) : (
+          <div style={{ padding: "20px", textAlign: "center" }}>
+            <h2>
+              Please choose a project for more details or use the search bar to
+              find a specific one.
+            </h2>
+          </div>
+        )}
       </Content>
     </ProjectsContainer>
   );
