@@ -1,8 +1,13 @@
 [
   {
     "id": 1,
-    "title": "C# Project 1",
-    "tags": ["C#", "Unity"],
-    "description": "A C# project using Unity."
+    "title": "Sample C# Project",
+    "description": "A sample C# project.",
+    "technologies": ["C#", ".NET"],
+    "tags": ["C#", "Example"],
+    "imageFolder": "/images/sample-cs-project/",
+    "links": [
+      {"name": "View Repository", "url": "https://github.com/Avdika/sample-cs-project"}
+    ]
   }
 ]

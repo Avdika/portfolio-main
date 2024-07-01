@@ -6,17 +6,14 @@ import {
   ProjectItem,
   SearchInput,
 } from "../styles/SidebarStyles";
+import { Project } from "../types/project";
 
 interface SidebarProps {
-  projectsData: {
-    id: number;
-    title: string;
-    tags: string[];
-    description: string;
-  }[];
+  projectsData: Project[];
+  onSelectProject: (project: Project) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ projectsData }) => {
+const Sidebar: React.FC<SidebarProps> = ({ projectsData, onSelectProject }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -43,7 +40,12 @@ const Sidebar: React.FC<SidebarProps> = ({ projectsData }) => {
           />
           <ProjectList>
             {filteredProjects.map((project) => (
-              <ProjectItem key={project.id}>{project.title}</ProjectItem>
+              <ProjectItem
+                key={project.id}
+                onClick={() => onSelectProject(project)}
+              >
+                {project.title}
+              </ProjectItem>
             ))}
           </ProjectList>
         </>
