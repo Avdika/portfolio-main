@@ -16,7 +16,7 @@
     "description": "Tic Tac Toe game implemented in JavaScript and React.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "tags": ["JavaScript", "React", "Game"],
-    "imageFolder": "/path/to/image1.png",
+    "imageFolder": "/images/rock-paper-scissors-extended/react/",
     "links": [
       {"name": "View Repository", "url": "https://github.com/Avdika/rock-paper-scissors-extended/react"}
     ]

@@ -26,7 +26,7 @@ const Sidebar: React.FC<SidebarProps> = ({ projectsData, onSelectProject }) => {
   );
 
   return (
-    <SidebarContainer isOpen={isOpen}>
+    <SidebarContainer $isOpen={isOpen}>
       <ToggleButton onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? "<<" : ">>"}
       </ToggleButton>

@@ -1,40 +1,43 @@
 import styled from 'styled-components';
 
-export const SidebarContainer = styled.div<{ isOpen: boolean }>`
-  width: ${({ isOpen }) => (isOpen ? '250px' : '50px')};
+interface SidebarContainerProps {
+  $isOpen: boolean;
+}
+
+export const SidebarContainer = styled.div<SidebarContainerProps>`
+  width: ${props => (props.$isOpen ? '250px' : '50px')};
   transition: width 0.3s;
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.text};
-  height: 100vh;
   overflow: hidden;
+  background-color: #1b3a79;
+  color: white;
 `;
 
 export const ToggleButton = styled.button`
   width: 100%;
-  background-color: ${({ theme }) => theme.background};
-  color: ${({ theme }) => theme.text};
+  background-color: #1b3a79;
+  color: white;
   border: none;
   cursor: pointer;
   padding: 10px;
-  text-align: left;
 `;
 
-export const ProjectList = styled.div`
-  padding: 10px;
+export const ProjectList = styled.ul`
+  list-style: none;
+  padding: 0;
 `;
 
-export const ProjectItem = styled.div`
-  padding: 5px 0;
+export const ProjectItem = styled.li`
   cursor: pointer;
-
+  padding: 10px;
   &:hover {
-    text-decoration: underline;
+    background-color: #3a79b1;
   }
 `;
 
 export const SearchInput = styled.input`
-  width: calc(100% - 20px);
-  padding: 5px;
-  margin: 10px;
-  border: 1px solid ${({ theme }) => theme.text};
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
 `;

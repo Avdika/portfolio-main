@@ -1,12 +1,18 @@
-const loadImages = (folderPath: string): string[] => {
+const loadImages = async (folderPath: string, maxImages: number = 10): Promise<string[]> => {
   const images: string[] = [];
-  try {
-    const context = (require as any).context(`../../public${folderPath}`, false, /\.(png|jpe?g|svg)$/);
-    context.keys().forEach((key: string) => {
-      images.push(`${folderPath}${key.replace('./', '')}`);
-    });
-  } catch (e) {
-    console.error(`Error loading images from ${folderPath}:`, e);
+  for (let i = 1; i <= maxImages; i++) {
+    const imagePath = `${folderPath}image-${i}.png`;
+    try {
+      const response = await fetch(imagePath);
+      if (response.ok) {
+        images.push(imagePath);
+      } else {
+        break;
+      }
+    } catch (e) {
+      console.error(`Error fetching image from ${imagePath}:`, e);
+      break;
+    }
   }
   return images;
 };
