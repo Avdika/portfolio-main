@@ -1,24 +1,36 @@
 import React, { useState } from "react";
-import projectsData from "../data/projectsCS.json";
-import ProjectDetail from "../components/ProjectDetail";
 import Sidebar from "../components/Sidebar";
-import { ProjectsContainer, Content } from "../styles/ProjectsStyles";
+import ProjectDetail from "../components/ProjectDetail";
+import projectsData from "../data/projectsCS.json";
 import { Project } from "../types/project";
+import {
+  ProjectsContainer,
+  MainContent,
+  SidebarContainer,
+  Disclaimer,
+} from "../styles/ProjectsStyles";
 
 const CSProjects: React.FC = () => {
-  const [selectedProject, setSelectedProject] = useState<Project>(
-    projectsData[0] as Project
-  );
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <ProjectsContainer>
-      <Sidebar
-        projectsData={projectsData}
-        onSelectProject={setSelectedProject}
-      />
-      <Content>
-        {selectedProject && <ProjectDetail project={selectedProject} />}
-      </Content>
+      <SidebarContainer>
+        <Sidebar
+          projectsData={projectsData as Project[]}
+          onSelectProject={setSelectedProject}
+        />
+      </SidebarContainer>
+      <MainContent>
+        {selectedProject ? (
+          <ProjectDetail project={selectedProject} />
+        ) : (
+          <Disclaimer>
+            Please choose a project for more details or use the search bar to
+            find a specific one.
+          </Disclaimer>
+        )}
+      </MainContent>
     </ProjectsContainer>
   );
 };

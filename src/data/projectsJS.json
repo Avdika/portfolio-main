@@ -5,7 +5,10 @@
     "description": "Experience the classic 'Rock Paper Scissors' game with a modern twist in this interactive web version. Not only does it include the original trio of Rock, Paper, and Scissors, but it also extends the fun with the addition of Lizard and Spock.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "tags": ["JavaScript", "Game"],
-    "imageFolder": "/images/rock-paper-scissors-extended/plain-js/",
+    "imageInfo": {
+      "folderPath": "/images/rock-paper-scissors-extended/plain-js/",
+      "count": 3
+    },
     "links": [
       {"name": "View Repository", "url": "https://github.com/Avdika/portfolio-projects/tree/main/rock-paper-scissors-extended/plain-js"}
     ]
@@ -16,7 +19,10 @@
     "description": "Tic Tac Toe game implemented in JavaScript and React.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "tags": ["JavaScript", "React", "Game"],
-    "imageFolder": "/images/rock-paper-scissors-extended/react/",
+    "imageInfo": {
+      "folderPath": "/images/rock-paper-scissors-extended/react/",
+      "count": 0
+    },
     "links": [
       {"name": "View Repository", "url": "https://github.com/Avdika/rock-paper-scissors-extended/react"}
     ]

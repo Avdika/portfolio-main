@@ -1,41 +1,39 @@
 import React from "react";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  tags: string[];
-  images: string[];
-  links: { name: string; url: string }[];
-}
+import { Project } from "../types/project";
+import {
+  Card,
+  CardContent,
+  CardTitle,
+  CardDescription,
+  CardTags,
+  CardLink,
+} from "../styles/ProjectCardStyles";
 
 interface ProjectCardProps {
   project: Project;
+  onClick: () => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   return (
-    <div>
-      <h2>{project.title}</h2>
-      <p>{project.description}</p>
-      <div>
-        {project.images.map((image, index) => (
-          <img key={index} src={image} alt={project.title} />
-        ))}
-      </div>
-      <div>
-        {project.links.map((link, index) => (
-          <a
-            key={index}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
-    </div>
+    <Card onClick={onClick}>
+      <CardContent>
+        <CardTitle>{project.title}</CardTitle>
+        <CardDescription>{project.description}</CardDescription>
+        <CardTags>
+          {project.tags.map((tag, index) => (
+            <span key={index}>{tag}</span>
+          ))}
+        </CardTags>
+        <CardLink
+          href={project.links[0].url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {project.links[0].name}
+        </CardLink>
+      </CardContent>
+    </Card>
   );
 };
 

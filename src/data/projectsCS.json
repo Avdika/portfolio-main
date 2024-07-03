@@ -5,7 +5,10 @@
     "description": "A sample C# project.",
     "technologies": ["C#", ".NET"],
     "tags": ["C#", "Example"],
-    "imageFolder": "/images/sample-cs-project/",
+    "imageInfo": {
+      "folderPath": "/images/sample-cs-project/",
+      "count": 0
+    },
     "links": [
       {"name": "View Repository", "url": "https://github.com/Avdika/sample-cs-project"}
     ]

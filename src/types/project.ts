@@ -4,6 +4,12 @@ export interface Project {
   description: string;
   technologies: string[];
   tags: string[];
-  imageFolder?: string;
-  links: { name: string; url: string }[];
+  imageInfo: {
+    folderPath: string;
+    count: number;
+  };
+  links: {
+    name: string;
+    url: string;
+  }[];
 }
