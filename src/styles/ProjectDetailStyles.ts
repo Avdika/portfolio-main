@@ -53,3 +53,12 @@ export const Links = styled.div`
     }
   }
 `;
+
+export const ProjectDetailWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
